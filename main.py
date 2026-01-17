@@ -21,6 +21,7 @@ def plot_tours(tsp: TSPInstance, tours: list[TSPTour], titles: list[str], simula
         plt.hist(samples, bins=50, alpha=0.5, label=f"{title} (VaR95: {tour.cost:.2f})", color=color)
         #  Add a vertical line for the estimated cost
         plt.axvline(tour.cost, color=color, linestyle='dashed', linewidth=1)
+        print(f"{title} - Tour {tour.tour} - Estimated VaR95: {tour.cost:.2f}")
 
     plt.xlabel("Tour Length")
     plt.ylabel("Frequency")
